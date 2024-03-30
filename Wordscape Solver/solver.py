@@ -187,7 +187,7 @@ def getLetters():
             ],
         'd':[
                 cv.imread(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\dwhite.png', cv.IMREAD_GRAYSCALE),
-                ##cv.imread(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\dblack.png', cv.IMREAD_GRAYSCALE),
+                cv.imread(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\dblack.png', cv.IMREAD_GRAYSCALE),
             ],
         'e':[
                 cv.imread(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\ewhite.png', cv.IMREAD_GRAYSCALE),
@@ -314,198 +314,465 @@ def inGame():
 
 def guess(guesses):
     for word in guesses:
-        x = 0
         guess = []
-        if len(word) == 3:
-            guess = [letter for letter in word]
-            win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
-            for letter in guess:
-                if x != len(guess):
-                    if letter == 'a':
-                        if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\awhite.png', grayscale=True, confidence=0.8) != None:
-                            letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\awhite.png', grayscale=True, confidence=0.8)
-                        else:
-                            letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\ablack.png', grayscale=True, confidence=0.8)
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                        
-                    elif letter == 'b':
-                        if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\bblack.png', grayscale=True, confidence=0.8) != None:
-                            letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\bblack.png', grayscale=True, confidence=0.8)
-                        else:
-                            #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\bwhite.png', grayscale=True, confidence=0.8)
-                            pass
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 'c':
-                        if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\cblack.png', grayscale=True, confidence=0.8) != None:
-                            letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\cblack.png', grayscale=True, confidence=0.8)
-                        else:
-                            #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\cwhite.png', grayscale=True, confidence=0.8)
-                            pass
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 'd':
-                        if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\dwhite.png', grayscale=True, confidence=0.8) != None:
-                            letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\dwhite.png', grayscale=True, confidence=0.8)
-                        else:
-                            letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\dblack.png', grayscale=True, confidence=0.8)
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 'e':
-                        if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\ewhite.png', grayscale=True, confidence=0.8) != None:
-                            letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\ewhite.png', grayscale=True, confidence=0.8)
-                        else:
-                            letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\eblack.png', grayscale=True, confidence=0.8)
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 'f':
-                        if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\fwhite.png', grayscale=True, confidence=0.8) != None:
-                            letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\fwhite.png', grayscale=True, confidence=0.8)
-                        else:
-                            #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\fblack.png', grayscale=True, confidence=0.8)
-                            pass
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 'g':
-                        if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\gblack.png', grayscale=True, confidence=0.8) != None:
-                            letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\gblack.png', grayscale=True, confidence=0.8)
-                        else:
-                            #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\gwhite.png', grayscale=True, confidence=0.8)
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 'h':
-                        if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\hblack.png', grayscale=True, confidence=0.8) != None:
-                            letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\hblack.png', grayscale=True, confidence=0.8)
-                        else:
-                            #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\hwhite.png', grayscale=True, confidence=0.8)
-                            pass
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 'i':
-                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\iwhite.png', grayscale=True, confidence=0.8)
-                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\iblack.png', grayscale=True, confidence=0.8)
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 'j':
-                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\jwhite.png', grayscale=True, confidence=0.8)
-                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\jblack.png', grayscale=True, confidence=0.8)
-                        #x,y = pyautogui.center(letterLocation)
-                        #win32api.SetCursorPos((x,y))
-                        pass
-                    elif letter == 'k':
-                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\kwhite.png', grayscale=True, confidence=0.8)
-                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\kblack.png', grayscale=True, confidence=0.8)
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 'l':
-                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\lwhite.png', grayscale=True, confidence=0.8)
-                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\lblack.png', grayscale=True, confidence=0.8)
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 'm':
-                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\mwhite.png', grayscale=True, confidence=0.8)
-                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\mblack.png', grayscale=True, confidence=0.8)
-                        #x,y = pyautogui.center(letterLocation)
-                        #win32api.SetCursorPos((x,y))
-                        pass
-                    elif letter == 'n':
-                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\nwhite.png', grayscale=True, confidence=0.8)
-                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\nblack.png', grayscale=True, confidence=0.8)
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 'o':
-                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\owhite.png', grayscale=True, confidence=0.8)
-                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\oblack.png', grayscale=True, confidence=0.8)
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 'p':
-                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\pwhite.png', grayscale=True, confidence=0.8)
-                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\pblack.png', grayscale=True, confidence=0.8)
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 'q':
-                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\qwhite.png', grayscale=True, confidence=0.8)
-                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\qblack.png', grayscale=True, confidence=0.8)
-                        #x,y = pyautogui.center(letterLocation)
-                        #win32api.SetCursorPos((x,y))
-                        pass
-                    elif letter == 'r':
-                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\rwhite.png', grayscale=True, confidence=0.8)
-                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\rblack.png', grayscale=True, confidence=0.8)
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 's':
-                        if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\sblack.png', grayscale=True, confidence=0.8) != None:
-                            letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\sblack.png', grayscale=True, confidence=0.8)
-                        else:
-                            #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\swhite.png', grayscale=True, confidence=0.8)
-                            pass
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 't':
-                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\twhite.png', grayscale=True, confidence=0.8)
-                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\tblack.png', grayscale=True, confidence=0.8)
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 'u':
-                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\uwhite.png', grayscale=True, confidence=0.8)
-                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\ublack.png', grayscale=True, confidence=0.8)
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 'v':
-                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\vwhite.png', grayscale=True, confidence=0.8)
-                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\vblack.png', grayscale=True, confidence=0.8)
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 'w':
-                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\wwhite.png', grayscale=True, confidence=0.8)
-                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\wblack.png', grayscale=True, confidence=0.8)
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 'x':
-                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\xwhite.png', grayscale=True, confidence=0.8)
-                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\xblack.png', grayscale=True, confidence=0.8)
-                        #x,y = pyautogui.center(letterLocation)
-                        #win32api.SetCursorPos((x,y))
-                        pass
-                    elif letter == 'y':
-                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\ywhite.png', grayscale=True, confidence=0.8)
-                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\yblack.png', grayscale=True, confidence=0.8)
-                        x,y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x,y))
-                    elif letter == 'z':
-                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\zwhite.png', grayscale=True, confidence=0.8)
-                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\zblack.png', grayscale=True, confidence=0.8)
-                        #x,y = pyautogui.center(letterLocation)
-                        #win32api.SetCursorPos((x,y))
-                        pass
+        x = 0
+        guess = [letter for letter in word]
+        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
+        for letter in guess:
+            if x < (len(guess) - 1):
+                if letter == 'a':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\awhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\awhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\ablack.png', grayscale=True, confidence=0.8)
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
                     x += 1
-                elif x == len(guess):
-                
+                elif letter == 'b':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\bblack.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\bblack.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\bwhite.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 'c':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\cblack.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\cblack.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\cwhite.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 'd':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\dwhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\dwhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\dblack.png', grayscale=True, confidence=0.8)
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 'e':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\ewhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\ewhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\eblack.png', grayscale=True, confidence=0.8)
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 'f':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\fwhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\fwhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\fblack.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 'g':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\gblack.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\gblack.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\gwhite.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 'h':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\hblack.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\hblack.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\hwhite.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 'i':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\iwhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\iwhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\iblack.png', grayscale=True, confidence=0.8)
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 'j':
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\jwhite.png', grayscale=True, confidence=0.8)
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\jblack.png', grayscale=True, confidence=0.8)
+                    #x,y = pyautogui.center(letterLocation)
+                    #win32api.SetCursorPos((x,y))
+                    pass
+                    x += 1
+                elif letter == 'k':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\kwhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\kwhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\kblack.png', grayscale=True, confidence=0.8)
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 'l':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\lblack.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\lblack.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\lwhite.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 'm':
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\mwhite.png', grayscale=True, confidence=0.8)
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\mblack.png', grayscale=True, confidence=0.8)
+                    #x,y = pyautogui.center(letterLocation)
+                    #win32api.SetCursorPos((x,y))
+                    pass
+                    x += 1
+                elif letter == 'n':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\nwhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\nwhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\nblack.png', grayscale=True, confidence=0.8)
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 'o':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\owhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\owhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\oblack.png', grayscale=True, confidence=0.8)
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 'p':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\pwhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\pwhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\pblack.png', grayscale=True, confidence=0.8)
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 'q':
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\qwhite.png', grayscale=True, confidence=0.8)
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\qblack.png', grayscale=True, confidence=0.8)
+                    #x,y = pyautogui.center(letterLocation)
+                    #win32api.SetCursorPos((x,y))
+                    pass
+                    x += 1
+                elif letter == 'r':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\rwhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\rwhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\rblack.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 's':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\sblack.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\sblack.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\swhite.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 't':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\twhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\twhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\tblack.png', grayscale=True, confidence=0.8)
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 'u':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\ublack.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\ublack.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\uwhite.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 'v':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\vblack.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\vblack.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\vwhite.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 'w':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\wwhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\wwhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\wblack.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 'x':
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\xwhite.png', grayscale=True, confidence=0.8)
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\xblack.png', grayscale=True, confidence=0.8)
+                    #x,y = pyautogui.center(letterLocation)
+                    #win32api.SetCursorPos((x,y))
+                    pass
+                    x += 1
+                elif letter == 'y':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\yblack.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\yblack.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\ywhite.png', grayscale=True, confidence=0.8)
+                        pass
+                    
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    x += 1
+                elif letter == 'z':
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\zwhite.png', grayscale=True, confidence=0.8)
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\zblack.png', grayscale=True, confidence=0.8)
+                    #x,y = pyautogui.center(letterLocation)
+                    #win32api.SetCursorPos((x,y))
+                    pass
+                    x += 1
+            else:
+                if letter == 'a':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\awhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\awhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\ablack.png', grayscale=True, confidence=0.8)
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                    print(x)
+                elif letter == 'b':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\bblack.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\bblack.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\bwhite.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 'c':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\cblack.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\cblack.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\cwhite.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 'd':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\dwhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\dwhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\dblack.png', grayscale=True, confidence=0.8)
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 'e':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\ewhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\ewhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\eblack.png', grayscale=True, confidence=0.8)
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 'f':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\fwhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\fwhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\fblack.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 'g':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\gblack.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\gblack.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\gwhite.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 'h':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\hblack.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\hblack.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\hwhite.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 'i':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\iwhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\iwhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\iblack.png', grayscale=True, confidence=0.8)
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 'j':
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\jwhite.png', grayscale=True, confidence=0.8)
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\jblack.png', grayscale=True, confidence=0.8)
+                    #x,y = pyautogui.center(letterLocation)
+                    #win32api.SetCursorPos((x,y))
+                    pass
+                elif letter == 'k':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\kwhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\kwhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\kblack.png', grayscale=True, confidence=0.8)
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 'l':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\lblack.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\lblack.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\lwhite.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 'm':
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\mwhite.png', grayscale=True, confidence=0.8)
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\mblack.png', grayscale=True, confidence=0.8)
+                    #x,y = pyautogui.center(letterLocation)
+                    #win32api.SetCursorPos((x,y))
+                    pass
+                elif letter == 'n':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\nwhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\nwhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\nblack.png', grayscale=True, confidence=0.8)
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 'o':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\owhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\owhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\oblack.png', grayscale=True, confidence=0.8)
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 'p':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\pwhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\pwhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\pblack.png', grayscale=True, confidence=0.8)
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 'q':
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\qwhite.png', grayscale=True, confidence=0.8)
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\qblack.png', grayscale=True, confidence=0.8)
+                    #x,y = pyautogui.center(letterLocation)
+                    #win32api.SetCursorPos((x,y))
+                    pass
+                elif letter == 'r':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\rwhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\rwhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\rblack.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 's':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\sblack.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\sblack.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\swhite.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 't':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\twhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\twhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\tblack.png', grayscale=True, confidence=0.8)
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 'u':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\ublack.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\ublack.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\uwhite.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 'v':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\vblack.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\vblack.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\vwhite.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 'w':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\wwhite.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\wwhite.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\wblack.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 'x':
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\xwhite.png', grayscale=True, confidence=0.8)
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\xblack.png', grayscale=True, confidence=0.8)
+                    #x,y = pyautogui.center(letterLocation)
+                    #win32api.SetCursorPos((x,y))
+                    pass
+                elif letter == 'y':
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\yblack.png', grayscale=True, confidence=0.8) != None:
+                        letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\yblack.png', grayscale=True, confidence=0.8)
+                    else:
+                        #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\ywhite.png', grayscale=True, confidence=0.8)
+                        pass
+                    x,y = pyautogui.center(letterLocation)
+                    win32api.SetCursorPos((x,y))
+                    time.sleep(0.5)
+                    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                elif letter == 'z':
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\zwhite.png', grayscale=True, confidence=0.8)
+                    #letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\zblack.png', grayscale=True, confidence=0.8)
+                    #x,y = pyautogui.center(letterLocation)
+                    #win32api.SetCursorPos((x,y))
+                    pass
             
 
             
-        if(len(word) == 4):
-            guess.append(word[0,1])
-            guess.append(word[1,2])
-            guess.append(word[2,3])
-        if(len(word) == 5):
-            guess.append(word[0,1])
-            guess.append(word[1,2])
-            guess.append(word[2,3])
-        if(len(word) == 6):
-            guess.append(word[0,1])
-            guess.append(word[1,2])
-            guess.append(word[2,3])
-        if(len(word) == 7):
-            guess.append(word[0,1])
-            guess.append(word[1,2])
-            guess.append(word[2,3])
 
-     
-
-    
 time.sleep(5)
 if blueStacksOpen():
     if isWordscapes():
