@@ -30,7 +30,7 @@ def click(x,y):
     win32api.SetCursorPos((x,y))
     win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
     time.sleep(0.5)
-    win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+    pyautogui.mouseUp(button='left')
 
 
 def isWordscapes():
@@ -344,8 +344,8 @@ def guess(guesses):
             guess = []
             c = 0
             guess = [letter for letter in word]
-            win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
-            time.sleep(1)
+            pyautogui.mouseUp(button='left')
+            time.sleep(2)
             win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
             for letter in guess:
                 if c < (len(word) - 1):
@@ -618,7 +618,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                         print("run2")
                         c += 1
                     else:
@@ -630,7 +630,7 @@ def guess(guesses):
 ##                        x,y = pyautogui.center(letterLocation)
 ##                        win32api.SetCursorPos((x,y))
 ##                        time.sleep(0.5)
-##                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+##                        pyautogui.mouseUp(button='left')
 ##                        c += 1
 ##                    else:
                     pass
@@ -641,7 +641,7 @@ def guess(guesses):
 ##                        x,y = pyautogui.center(letterLocation)
 ##                        win32api.SetCursorPos((x,y))
 ##                        time.sleep(0.5)
-##                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+##                        pyautogui.mouseUp(button='left')
 ##                    else:
                     pass
                     
@@ -651,7 +651,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                         
                     else:
                         pass
@@ -662,7 +662,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                         
                     else:
                         pass
@@ -673,7 +673,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)    
+                        pyautogui.mouseUp(button='left')    
                     else:
                         pass
                     
@@ -683,7 +683,7 @@ def guess(guesses):
 ##                        x,y = pyautogui.center(letterLocation)
 ##                        win32api.SetCursorPos((x,y))
 ##                        time.sleep(0.5)
-##                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+##                        pyautogui.mouseUp(button='left')
 ##                    else:
                     pass
                     
@@ -693,7 +693,7 @@ def guess(guesses):
 ##                        x,y = pyautogui.center(letterLocation)
 ##                        win32api.SetCursorPos((x,y))
 ##                        time.sleep(0.5)
-##                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+##                        pyautogui.mouseUp(button='left')
 ##                    else:
                     pass
                     
@@ -703,7 +703,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                         
                     else:
                         pass
@@ -719,7 +719,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                         
                     else:
                         pass
@@ -730,7 +730,7 @@ def guess(guesses):
 ##                        x,y = pyautogui.center(letterLocation)
 ##                        win32api.SetCursorPos((x,y))
 ##                        time.sleep(0.5)
-##                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+##                        pyautogui.mouseUp(button='left')
 ##                    else:
                     pass
                     
@@ -745,7 +745,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                     else:
                         pass
                     
@@ -755,7 +755,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                         
                     else:
                         pass
@@ -766,7 +766,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                         
                     else:
                         pass
@@ -782,7 +782,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                     else:
                         pass
                     
@@ -792,7 +792,7 @@ def guess(guesses):
 ##                        x,y = pyautogui.center(letterLocation)
 ##                        win32api.SetCursorPos((x,y))
 ##                        time.sleep(0.5)
-##                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+##                        pyautogui.mouseUp(button='left')
 ##                    else:
                     pass
                     
@@ -802,7 +802,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                     else:
                         pass
                     
@@ -812,7 +812,7 @@ def guess(guesses):
 ##                        x,y = pyautogui.center(letterLocation)
 ##                        win32api.SetCursorPos((x,y))
 ##                        time.sleep(0.5)
-##                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+##                        pyautogui.mouseUp(button='left')
 ##                    else:
                     pass
                     
@@ -822,7 +822,7 @@ def guess(guesses):
 ##                        x,y = pyautogui.center(letterLocation)
 ##                        win32api.SetCursorPos((x,y))
 ##                        time.sleep(0.5)
-##                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+##                        pyautogui.mouseUp(button='left')
 ##                    else:
                     pass
                     
@@ -832,7 +832,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                     else:
                         pass
                     
@@ -847,7 +847,7 @@ def guess(guesses):
 ##                        x,y = pyautogui.center(letterLocation)
 ##                        win32api.SetCursorPos((x,y))
 ##                        time.sleep(0.5)
-##                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+##                        pyautogui.mouseUp(button='left')
 ##                    else:
                     pass
                     
@@ -856,17 +856,17 @@ def guess(guesses):
                     #x,y = pyautogui.center(letterLocation)
                     #win32api.SetCursorPos((x,y))
                     pass
-            win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+            pyautogui.mouseUp(button='left')
     else:
         for word in guesses:
             guess = []
             c = 0
             guess = [letter for letter in word]
-            win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
-            time.sleep(1)
+            pyautogui.mouseUp(button='left')
+            time.sleep(2)
             win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN,0,0)
             for letter in guess:
-                if c <= (len(word) - 1):
+                if c < (len(word) - 1):
                     print("run")
                     if letter == 'a':
                         if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\ablack.png', grayscale=True, confidence=0.85) != None:
@@ -1125,7 +1125,7 @@ def guess(guesses):
                         #x,y = pyautogui.center(letterLocation)
                         #win32api.SetCursorPos((x,y))
                         pass
-                
+
             else:
                 print("run3")
                 if letter == 'a':
@@ -1134,7 +1134,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                         print("run2")
                         c += 1
                     else:
@@ -1146,7 +1146,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                         c += 1
                     else:
                         pass
@@ -1158,7 +1158,7 @@ def guess(guesses):
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
                         print("runc")
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                     else:
                         pass
                     
@@ -1168,7 +1168,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                         
                     else:
                         pass
@@ -1179,7 +1179,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                         
                     else:
                         pass
@@ -1190,7 +1190,7 @@ def guess(guesses):
 ##                        x,y = pyautogui.center(letterLocation)
 ##                        win32api.SetCursorPos((x,y))
 ##                        time.sleep(0.5)
-##                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)    
+##                        pyautogui.mouseUp(button='left')    
 ##                    else:
                     pass
                     
@@ -1200,7 +1200,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                     else:
                         pass
                     
@@ -1210,17 +1210,17 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                     else:
                         pass
                     
                 elif letter == 'i':
-                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\iblack.png', grayscale=True, confidence=0.85) != None:
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\iblack.png', grayscale=True, confidence=0.95) != None:
                         letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\iblack.png', grayscale=True, confidence=0.85)
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                         
                     else:
                         pass
@@ -1236,7 +1236,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                         
                     else:
                         pass
@@ -1247,7 +1247,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                     else:
                         pass
                     
@@ -1257,22 +1257,21 @@ def guess(guesses):
                     #win32api.SetCursorPos((x,y))
                     pass
                 elif letter == 'n':
-                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\nblack.png', grayscale=True, confidence=0.85) != None:
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\nblack.png', grayscale=True, confidence=0.7) != None:
                         letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\nblack.png', grayscale=True, confidence=0.85)
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
-                        time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                     else:
                         pass
                     
                 elif letter == 'o':
-                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\oblack.png', grayscale=True, confidence=0.85) != None:
+                    if pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\oblack.png', grayscale=True, confidence=0.7) != None:
                         letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\oblack.png', grayscale=True, confidence=0.85)
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                         
                     else:
                         pass
@@ -1283,7 +1282,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                         
                     else:
                         pass
@@ -1299,7 +1298,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                     else:
                         pass
                     
@@ -1309,7 +1308,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                     else:
                         pass
                     
@@ -1319,7 +1318,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                     else:
                         pass
                     
@@ -1329,7 +1328,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                     else:
                         pass
                     
@@ -1339,7 +1338,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                     else:
                         pass
                     
@@ -1349,7 +1348,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                     else:
                         pass
                     
@@ -1364,7 +1363,7 @@ def guess(guesses):
                         x,y = pyautogui.center(letterLocation)
                         win32api.SetCursorPos((x,y))
                         time.sleep(0.5)
-                        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
+                        pyautogui.mouseUp(button='left')
                     else:
                         pass
                     
@@ -1373,8 +1372,6 @@ def guess(guesses):
                     #x,y = pyautogui.center(letterLocation)
                     #win32api.SetCursorPos((x,y))
                     pass
-            win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP,0,0)
-           
 
             
 
