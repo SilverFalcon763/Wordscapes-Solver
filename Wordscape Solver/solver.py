@@ -61,6 +61,39 @@ def startGame():
 def sort(words, size): 
     return [word for word in words if len(word) == size]
 
+# modularizing code
+def getGuessesLetter(letter, length):
+    guesses = []
+    
+    with open('dictionary.json') as json_dictionary: 
+        dictionary = json.load(json_dictionary)
+    
+    for word in dictionary:
+        #for length, count in enumerate(lengths, start=3): 
+            if count > 0 and len(word) == length:  
+                for r in range(1, length + 1): 
+                    for combination in combinations(letters, r):
+                        if ''.join(combination) in word:  
+                            guesses.append(word)
+                            break  
+
+    # unit testing
+    assert 1 == 1
+    assert getGuessesLetter('A', 1) == ['A']
+    assert getGuessesLetter('A', 2).equals([])
+    
+    return guesses
+
+    
+
+def getGuessesLetters(letters, lengths):
+    lengths = [2, 3, 4, 5, 6, 7]
+
+    for l in lengths:
+        return getGuessesLetter(letters, l)
+        
+
+
 
 def getGuessesLetters(letters, lengths):
     guesses = []
@@ -311,6 +344,12 @@ def inGame():
     else:
         return False
 
+
+def getLetterLocation(letter):
+    
+    letterLocation = pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\dwhite.png', grayscale=True, confidence=0.85)
+    x,y = pyautogui.center(letterLocation)
+    win32api.SetCursorPos((x,y))
 
 def guess(guesses):
     if(pyautogui.locateOnScreen(r'C:\Users\roryc\OneDrive\Desktop\Wordscape Solver\letters\awhite.png', grayscale=True, confidence=0.85) != None or
