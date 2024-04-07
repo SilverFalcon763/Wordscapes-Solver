@@ -8,7 +8,7 @@ About
 
 Goals and requirements
 >Design Doc: https://docs.google.com/document/d/1Q90GQIqPvT8YkVg-ud_bCqOer_MYdidJw1zG0qGWNXg/edit
->Goals:
+Goals:
 > Have the program recognize how many letters there are in a level, the amount of words that exist for each length of word, and what letters are given
 > Have the program sort through a dictionary text file and comprise a list of all words containing the given letters, then guess those words by using a MouseClick or similar method
 > Have the program check the board each time and use clues to guess words, such as letters from a different word intersecting with the current word a providing a letter of the current word
