@@ -8,13 +8,14 @@ About
 
 Goals and requirements
 >Design Doc: https://docs.google.com/document/d/1Q90GQIqPvT8YkVg-ud_bCqOer_MYdidJw1zG0qGWNXg/edit
-Goals:
-> Have the program recognize how many letters there are in a level, the amount of words that exist for each length of word, and what letters are given
-> Have the program sort through a dictionary text file and comprise a list of all words containing the given letters, then guess those words by using a MouseClick or similar method
-> Have the program check the board each time and use clues to guess words, such as letters from a different word intersecting with the current word a providing a letter of the current word
+>
+>Goals:
+>> Have the program recognize how many letters there are in a level, the amount of words that exist for each length of word, and what letters are given
+>> Have the program sort through a dictionary text file and comprise a list of all words containing the given letters, then guess those words by using a MouseClick or similar method
+>> Have the program check the board each time and use clues to guess words, such as letters from a different word intersecting with the current word a providing a letter of the current word
 
-Non-goals: 
-> Make a program that randomly chooses letters in any order or combination
+>Non-goals: 
+>> Make a program that randomly chooses letters in any order or combination
 
 
 Sprint Goal
@@ -32,8 +33,5 @@ Running your project
 >To run this project, you would first download the project and extract is to your desktop. Once that has been completed, you would have to download Bluestacks from "https://www.bluestacks.com/bluestacks-5.html" and install Wordscapes from the app store within Bluestacks. Once that has been done, it should simply be a matter of opening Wordscapes and double clicking the solver.py file.
 
 
-Misc.
-
-
 Copyright
-This project is licensed under the terms of the MIT license and protected by Udacity Honor Code and Community Code of Conduct. See license and disclaimer.
+>This project is licensed under the terms of the MIT license and protected by Udacity Honor Code and Community Code of Conduct. See license and disclaimer.
