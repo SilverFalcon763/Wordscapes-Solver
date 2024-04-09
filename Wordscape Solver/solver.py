@@ -15,6 +15,10 @@ from pathlib import Path
 
 directory = Path(__file__).absolute().parent
 
+def join(given):
+    path = os.path.join(directory, given)
+    return path
+
 
 def click(x,y):
     win32api.SetCursorPos((x,y))
@@ -24,36 +28,29 @@ def click(x,y):
 
 
 def isWordscapes():
-    path = os.path.join(directory, 'wordscapes.png')
-    if pyautogui.locateOnScreen(path, confidence = 0.8) != None:
+    if pyautogui.locateOnScreen(join('wordscapes.png'), confidence = 0.8) != None:
         return True
     else:
         return False
 
 
 def blueStacksOpen():
-    path = os.path.join(directory, 'blueStacks.png')
-    if pyautogui.locateOnScreen(path, confidence = 0.8) != None:
+    if pyautogui.locateOnScreen(join('blueStacks.png'), confidence = 0.8) != None:
        return True
     else:
         return False
 
 
 def startGame():
-    path = os.path.join(directory, 'levelButton.png')
-    buttonLocation = pyautogui.locateOnScreen(path, grayscale = True, confidence=0.85)
+    buttonLocation = pyautogui.locateOnScreen(join('levelButton.png'), grayscale = True, confidence=0.85)
     if buttonLocation is not None:
         x, y = pyautogui.center(buttonLocation)
         click(x, y)
 
 
-def sort(words, size): 
-    return [word for word in words if len(word) == size]
-
-
-def getGuessesLetters(letters, lengths):
+def getGuesses(letters, lengths):
     guesses = []
-    path = os.path.join(directory, 'dictionary.json')
+    path = join('dictionary.json')
     with open(path) as json_dictionary: 
         dictionary = json.load(json_dictionary)
     for word in dictionary:
@@ -82,6 +79,24 @@ def removeDuplicates(words):
             sortedWords.append(word)
     return sortedWords
 
+
+def sortLetters(letters):
+    result = [] 
+
+    for i in letters: 
+        if i not in result: 
+            result.append(i) 
+
+    return result;
+
+    
+def inGame():
+    if pyautogui.locateOnScreen(os.path.join(directory, 'ingame.png'), confidence = 0.8) != None:
+        return True
+    else:
+        return False
+
+
 def getWordLengths():
     threeLetters = 0
     fourLetters = 0
@@ -90,32 +105,32 @@ def getWordLengths():
     sevenLetters = 0
     board = pyautogui.screenshot()
     board = cv.cvtColor(np.array(board), cv.COLOR_RGB2BGR)
-    cv.imwrite("board.png", board)
+    cv.imwrite(join('board.png'), board)
 
-    board = cv.imread('board.png')
+    board = cv.imread(join('board.png'))
     board_gray = cv.cvtColor(board, cv.COLOR_BGR2GRAY)
     assert board_gray is not None, "file could not be read, check with os.path.exists()"
 
     # Load template images
     templates = {
         'threeLetters': [
-            os.path.join(directory, 'threeLettersHW.png'),
-            os.path.join(directory, 'threeLettersHB.png'),
-            os.path.join(directory, 'threeLettersVW.png'),
-            os.path.join(directory, 'threeLettersVB.png'),
-            os.path.join(directory, 'threeBonusHW.png'),
+            join('threeLettersHW.png'),
+            join('threeLettersHB.png'),
+            join('threeLettersVW.png'),
+            join('threeLettersVB.png'),
+            join('threeBonusHW.png'),
         ],
         'fourLetters': [
-            os.path.join(directory, 'fourLettersHB.png'),
-            os.path.join(directory, 'fourLettersHW.png'),
-            os.path.join(directory, 'fourLettersVW.png'),
-            os.path.join(directory, 'fourLettersVB.png'),
-            os.path.join(directory, 'fourBonusHW.png'),
-            os.path.join(directory, 'fourBonusVW.png'),
+            join('fourLettersHB.png'),
+            join('fourLettersHW.png'),
+            join('fourLettersVW.png'),
+            join('fourLettersVB.png'),
+            join('fourBonusHW.png'),
+            join('fourBonusVW.png'),
         ],
         'fiveLetters': [
-            os.path.join(directory, 'fiveLettersHW.png'),
-            os.path.join(directory, 'fiveLettersVW.png'),
+            join('fiveLettersHW.png'),
+            join('fiveLettersVW.png'),
         ]
     }
 
@@ -146,18 +161,11 @@ def getWordLengths():
     foundWordLengths = [threeLetters, fourLetters, fiveLetters, sixLetters, sevenLetters]
     return foundWordLengths
 
-def join(letter):
-    path = os.path.join(directory, letter)
-    return path
-
 
 def getLetters():
     found_letters = []
-    
-
     board = pyautogui.screenshot()
     board = cv.cvtColor(np.array(board), cv.COLOR_RGB2GRAY)
-
  
     templates = {
         'a':[
@@ -183,7 +191,7 @@ def getLetters():
             ],
         'f':[
                 cv.imread(join('fwhite.png'), cv.IMREAD_GRAYSCALE),
-                ##cv.imread(join('fblack.png'), cv.IMREAD_GRAYSCALE),
+                cv.imread(join('fblack.png'), cv.IMREAD_GRAYSCALE),
             ],
         'g':[
                 ##cv.imread(join('gwhite.png'), cv.IMREAD_GRAYSCALE),
@@ -211,7 +219,7 @@ def getLetters():
             ],
         'm':[
                 ##cv.imread(join('mwhite.png'), cv.IMREAD_GRAYSCALE),
-                ##cv.imread(join('mblack.png'), cv.IMREAD_GRAYSCALE),
+                cv.imread(join('mblack.png'), cv.IMREAD_GRAYSCALE),
             ],
         'n':[
                 cv.imread(join('nwhite.png'), cv.IMREAD_GRAYSCALE),
@@ -274,29 +282,9 @@ def getLetters():
             res = cv.matchTemplate(board, template, cv.TM_CCOEFF_NORMED)
             threshold = 0.9
             loc = np.where(res >= threshold)
-        
             for pt in zip(*loc[::-1]):
                 found_letters.append(letter)
-
     return found_letters
-
-
-
-def sortLetters(letters):
-    result = [] 
-
-    for i in letters: 
-        if i not in result: 
-            result.append(i) 
-
-    return result;
-
-    
-def inGame():
-    if pyautogui.locateOnScreen(os.path.join(directory, 'ingame.png'), confidence = 0.8) != None:
-        return True
-    else:
-        return False
 
 
 def guess(guesses):
@@ -332,112 +320,142 @@ def guess(guesses):
         letter_paths = {
             'a': os.path.join(directory, 'awhite.png'),
             ##'b': os.path.join(directory, 'bwhite.png'),
-            ##'c': os.path.join(directory, 'bwhite.png'),
-            'd': os.path.join(directory, 'bwhite.png'),
-            'e': os.path.join(directory, 'bwhite.png'),
-            'f': os.path.join(directory, 'bwhite.png'),
-            ##'g': os.path.join(directory, 'bwhite.png'),
-            ##'h': os.path.join(directory, 'bwhite.png'),
-            'i': os.path.join(directory, 'bwhite.png'),
-            ##'j': os.path.join(directory, 'bwhite.png'),
-            'k': os.path.join(directory, 'bwhite.png'),
-            ##'l': os.path.join(directory, 'bwhite.png'),
-            ##'m': os.path.join(directory, 'bwhite.png'),
-            'n': os.path.join(directory, 'bwhite.png'),
-            'o': os.path.join(directory, 'bwhite.png'),
-            'p': os.path.join(directory, 'bwhite.png'),
-            ##'q': os.path.join(directory, 'bwhite.png'),
-            'r': os.path.join(directory, 'bwhite.png'),
-            ##'s': os.path.join(directory, 'bwhite.png'),
-            't': os.path.join(directory, 'bwhite.png'),
-            ##'u': os.path.join(directory, 'bwhite.png'),
-            ##'v': os.path.join(directory, 'bwhite.png'),
-            'w': os.path.join(directory, 'bwhite.png'),
-            ##'x': os.path.join(directory, 'bwhite.png'),
-            ##'y': os.path.join(directory, 'bwhite.png'),
-            ##'z': os.path.join(directory, 'bwhite.png'),
+            ##'c': os.path.join(directory, 'cwhite.png'),
+            'd': os.path.join(directory, 'dwhite.png'),
+            'e': os.path.join(directory, 'ewhite.png'),
+            'f': os.path.join(directory, 'fwhite.png'),
+            ##'g': os.path.join(directory, 'gwhite.png'),
+            ##'h': os.path.join(directory, 'hwhite.png'),
+            'i': os.path.join(directory, 'iwhite.png'),
+            ##'j': os.path.join(directory, 'jwhite.png'),
+            'k': os.path.join(directory, 'kwhite.png'),
+            ##'l': os.path.join(directory, 'lwhite.png'),
+            ##'m': os.path.join(directory, 'mwhite.png'),
+            'n': os.path.join(directory, 'nwhite.png'),
+            'o': os.path.join(directory, 'owhite.png'),
+            'p': os.path.join(directory, 'pwhite.png'),
+            ##'q': os.path.join(directory, 'qwhite.png'),
+            'r': os.path.join(directory, 'rwhite.png'),
+            ##'s': os.path.join(directory, 'swhite.png'),
+            't': os.path.join(directory, 'twhite.png'),
+            ##'u': os.path.join(directory, 'uwhite.png'),
+            ##'v': os.path.join(directory, 'vwhite.png'),
+            'w': os.path.join(directory, 'wwhite.png'),
+            ##'x': os.path.join(directory, 'xwhite.png'),
+            ##'y': os.path.join(directory, 'ywhite.png'),
+            ##'z': os.path.join(directory, 'zwhite.png'),
         }
         for word in guesses:
+            print("Checking word:", word)
             guess = [letter for letter in word]
-            time.sleep(2)
-            pyautogui.mouseDown(button='left')
+            win32api.SetCursorPos((1101, 730))
+            pyautogui.mouseDown(button='left')  
+            found_word = True  
             for letter in guess:
                 if letter in letter_paths:
                     letter_path = letter_paths[letter]
-                    if pyautogui.locateOnScreen(letter_path, grayscale=True, confidence=0.85) is not None:
-                        print(letter + " found!")
-                        letterLocation = pyautogui.locateOnScreen(letter_path, grayscale=True, confidence=0.85)
-                        x, y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x, y))
-                        c += 1
-            pyautogui.mouseUp(button='left')
+                    if pyautogui.locateOnScreen(letter_path, grayscale=True, confidence=0.85) is None:
+                        print(letter, "not found!")
+                        found_word = False
+                        break 
+                    else:
+                        print(letter, "found!")
+                        letterLocation = pyautogui.locateCenterOnScreen(letter_path, grayscale=True, confidence=0.85)
+                        pyautogui.moveTo(letterLocation)
+            if found_word:
+                pyautogui.mouseUp(button='left')
+        time.sleep(0.5)
     else:
         letter_paths = {
             'a': os.path.join(directory, 'ablack.png'),
-            ##'b': os.path.join(directory, 'bblack.png'),
-            ##'c': os.path.join(directory, 'bblack.png'),
-            'd': os.path.join(directory, 'bblack.png'),
-            'e': os.path.join(directory, 'bblack.png'),
-            'f': os.path.join(directory, 'bblack.png'),
-            ##'g': os.path.join(directory, 'bblack.png'),
-            ##'h': os.path.join(directory, 'bblack.png'),
-            'i': os.path.join(directory, 'bblack.png'),
-            ##'j': os.path.join(directory, 'bblack.png'),
-            'k': os.path.join(directory, 'bblack.png'),
-            ##'l': os.path.join(directory, 'bblack.png'),
-            ##'m': os.path.join(directory, 'bblack.png'),
-            'n': os.path.join(directory, 'bblack.png'),
-            'o': os.path.join(directory, 'bblack.png'),
-            'p': os.path.join(directory, 'bblack.png'),
-            ##'q': os.path.join(directory, 'bblack.png'),
-            'r': os.path.join(directory, 'bblack.png'),
-            ##'s': os.path.join(directory, 'bblack.png'),
-            't': os.path.join(directory, 'bblack.png'),
-            ##'u': os.path.join(directory, 'bblack.png'),
-            ##'v': os.path.join(directory, 'bblack.png'),
-            'w': os.path.join(directory, 'bblack.png'),
-            ##'x': os.path.join(directory, 'bblack.png'),
-            ##'y': os.path.join(directory, 'bblack.png'),
-            ##'z': os.path.join(directory, 'bblack.png'),
+            'b': os.path.join(directory, 'bblack.png'),
+            'c': os.path.join(directory, 'cblack.png'),
+            'd': os.path.join(directory, 'dblack.png'),
+            'e': os.path.join(directory, 'eblack.png'),
+            'f': os.path.join(directory, 'fblack.png'),
+            'g': os.path.join(directory, 'gblack.png'),
+            'h': os.path.join(directory, 'hblack.png'),
+            'i': os.path.join(directory, 'iblack.png'),
+            ##'j': os.path.join(directory, 'jblack.png'),
+            'k': os.path.join(directory, 'kblack.png'),
+            'l': os.path.join(directory, 'lblack.png'),
+            'm': os.path.join(directory, 'mblack.png'),
+            'n': os.path.join(directory, 'nblack.png'),
+            'o': os.path.join(directory, 'oblack.png'),
+            'p': os.path.join(directory, 'pblack.png'),
+            ##'q': os.path.join(directory, 'qblack.png'),
+            'r': os.path.join(directory, 'rblack.png'),
+            's': os.path.join(directory, 'sblack.png'),
+            't': os.path.join(directory, 'tblack.png'),
+            'u': os.path.join(directory, 'ublack.png'),
+            'v': os.path.join(directory, 'vblack.png'),
+            'w': os.path.join(directory, 'wblack.png'),
+            ##'x': os.path.join(directory, 'xblack.png'),
+            'y': os.path.join(directory, 'yblack.png'),
+            ##'z': os.path.join(directory, 'zblack.png'),
         }
+
         for word in guesses:
+            print("Checking word:", word)
             guess = [letter for letter in word]
-            time.sleep(2)
-            pyautogui.mouseDown(button='left')
+            win32api.SetCursorPos((1101, 730))
+            pyautogui.mouseDown(button='left')  
+            found_word = True  
             for letter in guess:
                 if letter in letter_paths:
                     letter_path = letter_paths[letter]
-                    if pyautogui.locateOnScreen(letter_path, grayscale=True, confidence=0.85) is not None:
-                        print(letter + " found!")
-                        letterLocation = pyautogui.locateOnScreen(letter_path, grayscale=True, confidence=0.85)
-                        x, y = pyautogui.center(letterLocation)
-                        win32api.SetCursorPos((x, y))
-                        c += 1
-            pyautogui.mouseUp(button='left')
+                    if pyautogui.locateOnScreen(letter_path, grayscale=True, confidence=0.85) is None:
+                        print(letter, "not found!")
+                        found_word = False
+                        break
+                    else:
+                        print(letter, "found!")
+                        letterLocation = pyautogui.locateCenterOnScreen(letter_path, grayscale=True, confidence=0.85)
+                        pyautogui.moveTo(letterLocation)
+            if found_word:
+                pyautogui.mouseUp(button='left')
+        time.sleep(0.5)
 
 
+def skipAd():
+    if pyautogui.locateOnScreen(join('skipAd.png'), confidence = 0.8) != None:
+        skipLocation = pyautogui.locateOnScreen(join('skipAd.png'), grayscale = True, confidence=0.8)
+        x, y = pyautogui.center(skipLocation)
+        click(x, y)
+        time.sleep(3)
+    if pyautogui.locateOnScreen(join('exitAd.png'), confidence = 0.8) != None:
+        exitLocation = pyautogui.locateOnScreen(join('exitAd.png'), grayscale = True, confidence=0.8)
+        x, y = pyautogui.center(exitLocation)
+        click(x, y)
 
-            
+def skipCredits():
+    if pyautogui.locateOnScreen(join('skip.png'), confidence = 0.8) != None:
+        skipLocation = pyautogui.locateOnScreen(join('skip.png'), grayscale = True, confidence=0.8)
+        x, y = pyautogui.center(skipLocation)
+        click(x, y)
+        time.sleep(3)
 
 time.sleep(5)
-if blueStacksOpen():
-    if isWordscapes():
-        print("isWordscapes")
-        startGame()
-        time.sleep(5)
-        foundLetters = getLetters()
-        sortedLetters = sortLetters(foundLetters)
-        foundWordLengths = getWordLengths()
-        print(sortedLetters)
-        print(foundWordLengths)
-        guesses = getGuessesLetters(sortedLetters, foundWordLengths)
-        guesses = clean(guesses, sortedLetters)
-        guesses = removeDuplicates(guesses)
-        print (guesses)
-        guess(guesses)
-
-
+while True:
+    if blueStacksOpen():
+        if isWordscapes():
+            print("isWordscapes")
+            startGame()
+            time.sleep(5)
+            foundLetters = getLetters()
+            sortedLetters = sortLetters(foundLetters)
+            foundWordLengths = getWordLengths()
+            print(sortedLetters)
+            print(foundWordLengths)
+            guesses = getGuesses(sortedLetters, foundWordLengths)
+            guesses = clean(guesses, sortedLetters)
+            guesses = removeDuplicates(guesses)
+            print (guesses)
+            guess(guesses)
+        skipCredits()
+        skipAd()
             
+
 
 
 
