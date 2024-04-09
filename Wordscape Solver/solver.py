@@ -127,10 +127,13 @@ def getWordLengths():
             join('fourLettersVB.png'),
             join('fourBonusHW.png'),
             join('fourBonusVW.png'),
+            join('fourBonusHB.png'),
         ],
         'fiveLetters': [
             join('fiveLettersHW.png'),
             join('fiveLettersVW.png'),
+            join('fiveLettersVB.png'),
+            join('fiveLettersHB.png'),
         ]
     }
 
@@ -174,11 +177,11 @@ def getLetters():
                 cv.imread(join('ablack.png'), cv.IMREAD_GRAYSCALE),
             ],
         'b':[
-                ##cv.imread(join('bwhite.png'), cv.IMREAD_GRAYSCALE),
+                cv.imread(join('bwhite.png'), cv.IMREAD_GRAYSCALE),
                 cv.imread(join('bblack.png'), cv.IMREAD_GRAYSCALE),
             ],
         'c':[
-                ##cv.imread(join('cwhite.png'), cv.IMREAD_GRAYSCALE),
+                cv.imread(join('cwhite.png'), cv.IMREAD_GRAYSCALE),
                 cv.imread(join('cblack.png'), cv.IMREAD_GRAYSCALE),
             ],
         'd':[
@@ -194,11 +197,11 @@ def getLetters():
                 cv.imread(join('fblack.png'), cv.IMREAD_GRAYSCALE),
             ],
         'g':[
-                ##cv.imread(join('gwhite.png'), cv.IMREAD_GRAYSCALE),
+                cv.imread(join('gwhite.png'), cv.IMREAD_GRAYSCALE),
                 cv.imread(join('gblack.png'), cv.IMREAD_GRAYSCALE),
             ],
         'h':[
-                ##cv.imread(join('hwhite.png'), cv.IMREAD_GRAYSCALE),
+                cv.imread(join('hwhite.png'), cv.IMREAD_GRAYSCALE),
                 cv.imread(join('hblack.png'), cv.IMREAD_GRAYSCALE),
             ],
         'i':[
@@ -214,7 +217,7 @@ def getLetters():
                 cv.imread(join('kblack.png'), cv.IMREAD_GRAYSCALE),
             ],
         'l':[
-                ##cv.imread(join('lwhite.png'), cv.IMREAD_GRAYSCALE),
+                cv.imread(join('lwhite.png'), cv.IMREAD_GRAYSCALE),
                 cv.imread(join('lblack.png'), cv.IMREAD_GRAYSCALE),
             ],
         'm':[
@@ -242,7 +245,7 @@ def getLetters():
                 cv.imread(join('rblack.png'), cv.IMREAD_GRAYSCALE),
             ],
         's':[
-                ##cv.imread(join('swhite.png'), cv.IMREAD_GRAYSCALE),
+                cv.imread(join('swhite.png'), cv.IMREAD_GRAYSCALE),
                 cv.imread(join('sblack.png'), cv.IMREAD_GRAYSCALE),
             ],
         't':[
@@ -266,7 +269,7 @@ def getLetters():
                 ##cv.imread(join('xblack.png'), cv.IMREAD_GRAYSCALE),
             ],
         'y':[
-                ##cv.imread(join('ywhite.png'), cv.IMREAD_GRAYSCALE),
+                cv.imread(join('ywhite.png'), cv.IMREAD_GRAYSCALE),
                 cv.imread(join('yblack.png'), cv.IMREAD_GRAYSCALE),
             ],
         'z':[
@@ -289,66 +292,69 @@ def getLetters():
 
 def guess(guesses):
     if(pyautogui.locateOnScreen(os.path.join(directory, 'awhite.png'), grayscale=True, confidence=0.85) != None or
-       ##pyautogui.locateOnScreen(os.path.join(directory, 'bwhite.png'), grayscale=True, confidence=0.85) != None or
-       ##pyautogui.locateOnScreen(os.path.join(directory, 'cwhite.png'), grayscale=True, confidence=0.85) != None or
+       pyautogui.locateOnScreen(os.path.join(directory, 'bwhite.png'), grayscale=True, confidence=0.85) != None or
+       pyautogui.locateOnScreen(os.path.join(directory, 'cwhite.png'), grayscale=True, confidence=0.85) != None or
        pyautogui.locateOnScreen(os.path.join(directory, 'dwhite.png'), grayscale=True, confidence=0.85) != None or
        pyautogui.locateOnScreen(os.path.join(directory, 'ewhite.png'), grayscale=True, confidence=0.85) != None or
        pyautogui.locateOnScreen(os.path.join(directory, 'fwhite.png'), grayscale=True, confidence=0.85) != None or
-       ##pyautogui.locateOnScreen(os.path.join(directory, 'gwhite.png'), grayscale=True, confidence=0.85) != None or
-       ##pyautogui.locateOnScreen(os.path.join(directory, 'hwhite.png'), grayscale=True, confidence=0.85) != None or
+       pyautogui.locateOnScreen(os.path.join(directory, 'gwhite.png'), grayscale=True, confidence=0.85) != None or
+       pyautogui.locateOnScreen(os.path.join(directory, 'hwhite.png'), grayscale=True, confidence=0.85) != None or
        pyautogui.locateOnScreen(os.path.join(directory, 'iwhite.png'), grayscale=True, confidence=0.85) != None or
        ##pyautogui.locateOnScreen(os.path.join(directory, 'jwhite.png'), grayscale=True, confidence=0.85) != None or
        pyautogui.locateOnScreen(os.path.join(directory, 'kwhite.png'), grayscale=True, confidence=0.85) != None or
-       ##pyautogui.locateOnScreen(os.path.join(directory, 'lwhite.png'), grayscale=True, confidence=0.85) != None or
+       pyautogui.locateOnScreen(os.path.join(directory, 'lwhite.png'), grayscale=True, confidence=0.85) != None or
        ##pyautogui.locateOnScreen(os.path.join(directory, 'mwhite.png'), grayscale=True, confidence=0.85) != None or
        pyautogui.locateOnScreen(os.path.join(directory, 'nwhite.png'), grayscale=True, confidence=0.85) != None or
        pyautogui.locateOnScreen(os.path.join(directory, 'owhite.png'), grayscale=True, confidence=0.85) != None or
        pyautogui.locateOnScreen(os.path.join(directory, 'pwhite.png'), grayscale=True, confidence=0.85) != None or
        ##pyautogui.locateOnScreen(os.path.join(directory, 'qwhite.png'), grayscale=True, confidence=0.85) != None or
        pyautogui.locateOnScreen(os.path.join(directory, 'rwhite.png'), grayscale=True, confidence=0.85) != None or
-       ##pyautogui.locateOnScreen(os.path.join(directory, 'swhite.png'), grayscale=True, confidence=0.85) != None or
+       pyautogui.locateOnScreen(os.path.join(directory, 'swhite.png'), grayscale=True, confidence=0.85) != None or
        pyautogui.locateOnScreen(os.path.join(directory, 'twhite.png'), grayscale=True, confidence=0.85) != None or
        ##pyautogui.locateOnScreen(os.path.join(directory, 'uwhite.png'), grayscale=True, confidence=0.85) != None or
        ##pyautogui.locateOnScreen(os.path.join(directory, 'vwhite.png'), grayscale=True, confidence=0.85) != None or
-       pyautogui.locateOnScreen(os.path.join(directory, 'wwhite.png'), grayscale=True, confidence=0.85) != None
+       pyautogui.locateOnScreen(os.path.join(directory, 'wwhite.png'), grayscale=True, confidence=0.85) != None or
        ##pyautogui.locateOnScreen(os.path.join(directory, 'xwhite.png'), grayscale=True, confidence=0.85) != None or
-       ##pyautogui.locateOnScreen(os.path.join(directory, 'ywhite.png'), grayscale=True, confidence=0.85) != None or
+       pyautogui.locateOnScreen(os.path.join(directory, 'ywhite.png'), grayscale=True, confidence=0.85) != None
        ##pyautogui.locateOnScreen(os.path.join(directory, 'zwhite.png'), grayscale=True, confidence=0.85) != None
        ):
 
         
         letter_paths = {
             'a': os.path.join(directory, 'awhite.png'),
-            ##'b': os.path.join(directory, 'bwhite.png'),
-            ##'c': os.path.join(directory, 'cwhite.png'),
+            'b': os.path.join(directory, 'bwhite.png'),
+            'c': os.path.join(directory, 'cwhite.png'),
             'd': os.path.join(directory, 'dwhite.png'),
             'e': os.path.join(directory, 'ewhite.png'),
             'f': os.path.join(directory, 'fwhite.png'),
-            ##'g': os.path.join(directory, 'gwhite.png'),
-            ##'h': os.path.join(directory, 'hwhite.png'),
+            'g': os.path.join(directory, 'gwhite.png'),
+            'h': os.path.join(directory, 'hwhite.png'),
             'i': os.path.join(directory, 'iwhite.png'),
             ##'j': os.path.join(directory, 'jwhite.png'),
             'k': os.path.join(directory, 'kwhite.png'),
-            ##'l': os.path.join(directory, 'lwhite.png'),
+            'l': os.path.join(directory, 'lwhite.png'),
             ##'m': os.path.join(directory, 'mwhite.png'),
             'n': os.path.join(directory, 'nwhite.png'),
             'o': os.path.join(directory, 'owhite.png'),
             'p': os.path.join(directory, 'pwhite.png'),
             ##'q': os.path.join(directory, 'qwhite.png'),
             'r': os.path.join(directory, 'rwhite.png'),
-            ##'s': os.path.join(directory, 'swhite.png'),
+            's': os.path.join(directory, 'swhite.png'),
             't': os.path.join(directory, 'twhite.png'),
             ##'u': os.path.join(directory, 'uwhite.png'),
             ##'v': os.path.join(directory, 'vwhite.png'),
             'w': os.path.join(directory, 'wwhite.png'),
             ##'x': os.path.join(directory, 'xwhite.png'),
-            ##'y': os.path.join(directory, 'ywhite.png'),
+            'y': os.path.join(directory, 'ywhite.png'),
             ##'z': os.path.join(directory, 'zwhite.png'),
         }
         for word in guesses:
             print("Checking word:", word)
             guess = [letter for letter in word]
-            win32api.SetCursorPos((1101, 730))
+            if pyautogui.locateOnScreen(join('ads.png'), grayscale=True, confidence=0.85):
+                win32api.SetCursorPos((1201, 729))
+            else:
+                win32api.SetCursorPos((1201, 722))
             pyautogui.mouseDown(button='left')  
             found_word = True  
             for letter in guess:
@@ -398,7 +404,10 @@ def guess(guesses):
         for word in guesses:
             print("Checking word:", word)
             guess = [letter for letter in word]
-            win32api.SetCursorPos((1101, 730))
+            if pyautogui.locateOnScreen(join('ads.png'), grayscale=True, confidence=0.85):
+                win32api.SetCursorPos((1201, 725))
+            else:
+                win32api.SetCursorPos((1201, 722))
             pyautogui.mouseDown(button='left')  
             found_word = True  
             for letter in guess:
@@ -417,31 +426,13 @@ def guess(guesses):
         time.sleep(0.5)
 
 
-def skipAd():
-    if pyautogui.locateOnScreen(join('skipAd.png'), confidence = 0.8) != None:
-        skipLocation = pyautogui.locateOnScreen(join('skipAd.png'), grayscale = True, confidence=0.8)
-        x, y = pyautogui.center(skipLocation)
-        click(x, y)
-        time.sleep(3)
-    if pyautogui.locateOnScreen(join('exitAd.png'), confidence = 0.8) != None:
-        exitLocation = pyautogui.locateOnScreen(join('exitAd.png'), grayscale = True, confidence=0.8)
-        x, y = pyautogui.center(exitLocation)
-        click(x, y)
-
-def skipCredits():
-    if pyautogui.locateOnScreen(join('skip.png'), confidence = 0.8) != None:
-        skipLocation = pyautogui.locateOnScreen(join('skip.png'), grayscale = True, confidence=0.8)
-        x, y = pyautogui.center(skipLocation)
-        click(x, y)
-        time.sleep(3)
-
 time.sleep(5)
 while True:
     if blueStacksOpen():
         if isWordscapes():
             print("isWordscapes")
             startGame()
-            time.sleep(5)
+            time.sleep(2)
             foundLetters = getLetters()
             sortedLetters = sortLetters(foundLetters)
             foundWordLengths = getWordLengths()
@@ -452,9 +443,9 @@ while True:
             guesses = removeDuplicates(guesses)
             print (guesses)
             guess(guesses)
-        skipCredits()
-        skipAd()
-            
+            time.sleep(5)
+
+
 
 
 
